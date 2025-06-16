@@ -1,0 +1,93 @@
+<% layout('./layouts/boilerplate') -%>
+<body>
+    <br><br>
+    <div class="row">
+        <div class="col-8 offset-2">
+        <h2>Create new listing</h2>
+        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div>
+                <h5></h5><label for="title" class="form-label">Title</label></h5>
+                <input 
+                name="listing[title]"  
+                placeholder="Enter Title" 
+                class="form-control"
+                required >
+                <div class="valid-feedback">Title looks good!!</div>
+            </div>
+            <br>
+            <div>
+                <h5><label for="description" class="form-label">Description</label></h5>
+                <input
+                name="listing[description]"  
+                placeholder="Enter description"
+                class="form-control"
+                required >
+                <div class="invalid-feedback">
+                     please enter short description 
+                </div>
+            </div>
+            <br>
+            <div>
+                <h5><label for="image" class="form-label">Upload Image</label></h5>
+                <input name="listing[image]" 
+                class="form-control"
+                type="file">
+            </div>
+            <br>
+            <div>
+                <h5><label for="price" class="form-label">Price</label></h5>
+                <input name="listing[price]" 
+                placeholder="1200"
+                class="form-control"
+                required >
+                <div class="invalid-feedback">
+                    price should be valid
+               </div>
+            </div>
+            <br>
+            <div>
+                <h5><label for="location" class="form-label">location</label></h5>
+                <input name="listing[location]" 
+                placeholder="Delhi"
+                class="form-control"
+                required >
+                <div class="invalid-feedback">
+                    location should be valid
+               </div>
+            </div>
+            <br>
+            <div>
+                <h5><label for="country" class="form-label">Country</label></h5>
+                <input name="listing[country]" 
+                placeholder="India"
+                class="form-control"
+                required >
+                <div class="invalid-feedback">
+                    Country should be valid
+               </div>
+            </div>
+            <br>
+            <div>
+                <h5><label for="category" class="form-label">Category</label></h5>
+                <select name="listing[category]" class="form-control" required>
+                    <option value="">Select a category</option>
+                    <option value="Trending">Trending</option>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Iconic Cities">Iconic Cities</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Castles">Castles</option>
+                    <option value="Amazing pools">Amazing pools</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Farms">Farms</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a category
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-outline-danger add-btn">Add</button>
+        </form>
+        </div>
+    </div>
+    <br><br>
+</body>
